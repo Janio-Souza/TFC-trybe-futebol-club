@@ -1,5 +1,6 @@
 import * as express from 'express';
 
+//Go!
 class App {
   public app: express.Express;
 
