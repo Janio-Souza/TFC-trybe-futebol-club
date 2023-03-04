@@ -1,8 +1,6 @@
 import { Model, INTEGER, STRING } from 'sequelize';
 import db from '.';
 
-// import Books from './BookModel'; // Nossa outra entidade
-
 class Teams extends Model {
   declare id: number;
   declare teamName: string;
