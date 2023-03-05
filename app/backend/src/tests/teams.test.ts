@@ -1,47 +1,46 @@
-// import * as sinon from 'sinon';
-// import * as chai from 'chai';
-// // @ts-ignore
-// import chaiHttp = require('chai-http');
+import * as sinon from 'sinon';
+import * as chai from 'chai';
+// @ts-ignore
+import chaiHttp = require('chai-http');
 
-// import { app } from '../app';
-// import Example from '../database/models/ExampleModel'; //Model Example
-// import Teams from '../database/models/TeamsModel'
-// import teamsMock from './mocks/teams';
+import { Model } from 'sequelize';
+import Teams from '../database/models/TeamsModel'
+import TeamsServices from '../services/teams.service';
+import { app } from '../app'
 
 // import { Response } from 'superagent';
 
-// chai.use(chaiHttp);
+chai.use(chaiHttp);
 
-// const { expect } = chai;
+const { expect } = chai;
 
-// describe('Tesnatando rota /teams', () => {
-//   /**
-//    * Exemplo do uso de stubs com tipos
-//    */
+describe('Testando rota /teams', () => {
 
-//   let chaiHttpResponse: Response;
+  after(()=>{
+    (Teams.findAll as sinon.SinonStub).restore();
+  })
 
-//   before(async () => {
-//     sinon
-//       .stub(Teams, "findAll")
-//       .resolves({
-//         ...<typeof teamsMock>
-//       } as Teams);
-//   });
+  it('Verificando retorno de todos os times', async () => {
+    const outputMock: Teams[] = [new Teams({
+      id: 1,
+      teamName: 'Time1',
+    })];
 
-//   after(()=>{
-//     (Teams.findAll as sinon.SinonStub).restore();
-//   })
+    sinon.stub(Model, 'findAll').resolves(outputMock);
+    const service = new TeamsServices();
+    const result = await service.readAll();
+    
+    expect(result).to.be.equal(outputMock);
+  });
 
-//   it('...', async () => {
-//     chaiHttpResponse = await chai
-//        .request(app)
-//        ...
-
-//     expect(...)
-//   });
-
-//   it('Seu sub-teste', () => {
-//     expect(false).to.be.eq(true);
-//   });
-// });
+  it('Retorna 200, com a lista de times', async () => {
+    // const result = [{ id: 1, teamName: 'Time1' }];
+    const  chaiHttpResponse = await chai
+        .request(app).get('/teams');
+    
+    expect(chaiHttpResponse.status).to.be.equal(200);
+    // console.log('log1', chaiHttpResponse.body);
+    // console.log('log2', result);
+    // expect(chaiHttpResponse.body).to.equal(result);
+  });
+});
