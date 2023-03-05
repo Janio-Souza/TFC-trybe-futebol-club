@@ -7,6 +7,7 @@ import { Model } from 'sequelize';
 import Teams from '../database/models/TeamsModel'
 import TeamsServices from '../services/teams.service';
 import { app } from '../app'
+import { after } from 'node:test';
 
 // import { Response } from 'superagent';
 
