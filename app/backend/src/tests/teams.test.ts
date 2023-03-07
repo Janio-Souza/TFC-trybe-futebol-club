@@ -7,7 +7,7 @@ import { Model } from 'sequelize';
 import Teams from '../database/models/TeamsModel'
 import TeamsServices from '../services/teams.service';
 import { app } from '../app'
-import { after } from 'node:test';
+// import { after } from 'node:test';
 
 // import { Response } from 'superagent';
 
@@ -17,15 +17,20 @@ const { expect } = chai;
 
 describe('Testando rota /teams', () => {
 
-  after(()=>{
-    (Teams.findAll as sinon.SinonStub).restore();
+  afterEach(() => {
+    sinon.restore();
   })
 
+  const outputMock: Teams[] = [new Teams({
+    id: 1,
+    teamName: 'Time1',
+  })];
+
+  // after(()=>{
+  //   (Teams.findAll as sinon.SinonStub).restore();
+  // })
+
   it('Verificando retorno de todos os times', async () => {
-    const outputMock: Teams[] = [new Teams({
-      id: 1,
-      teamName: 'Time1',
-    })];
 
     sinon.stub(Model, 'findAll').resolves(outputMock);
     const service = new TeamsServices();
@@ -36,6 +41,9 @@ describe('Testando rota /teams', () => {
 
   it('Retorna 200, com a lista de times', async () => {
     // const result = [{ id: 1, teamName: 'Time1' }];
+
+    sinon.stub(Model, 'findAll').resolves(outputMock);
+
     const  chaiHttpResponse = await chai
         .request(app).get('/teams');
     
@@ -44,4 +52,11 @@ describe('Testando rota /teams', () => {
     // console.log('log2', result);
     // expect(chaiHttpResponse.body).to.equal(result);
   });
+  it('Retorna 200, com busca de time por ID', async () => {
+    sinon.stub(Model, 'findAll').resolves(outputMock);
+    const chaiHttpResponse = await chai
+    .request(app).get('/teams/1');
+
+    expect(chaiHttpResponse.status).to.be.equal(200);
+  })
 });

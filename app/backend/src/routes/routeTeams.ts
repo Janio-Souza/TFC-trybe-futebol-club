@@ -5,7 +5,7 @@ import TeamsServices from '../services/teams.service';
 const teamsRoutes = Router();
 const teamService = new TeamsServices();
 const teamsController = new TeamsController(teamService);
-teamsRoutes.get('/teams', (req: Request, res: Response) => teamsController.readAll(req, res));
-teamsRoutes.get('/teams/:id', (req: Request, res: Response) => teamsController.getById(req, res));
+teamsRoutes.get('/', (req: Request, res: Response) => teamsController.readAll(req, res));
+teamsRoutes.get('/:id', (req: Request, res: Response) => teamsController.getById(req, res));
 
 export default teamsRoutes;
