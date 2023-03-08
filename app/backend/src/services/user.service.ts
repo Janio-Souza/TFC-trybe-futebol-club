@@ -25,6 +25,11 @@ class UserService implements IServiceUser {
     const token = jwtTokenGenerate({ id: user?.id, role: user?.role });
     return { status: 200, message: { token } };
   }
+
+  async getUserById(id: number): Promise<{ status: number; message: unknown }> {
+    const user = await this.model.findOne({ where: { id } });
+    return { status: 200, message: user?.role };
+  }
 }
 
 export default UserService;
