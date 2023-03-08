@@ -10,6 +10,6 @@ export default class UserController {
 
   async login(req: Request, res: Response) {
     const result = await this._IService.login(req);
-    return res.status(result.status).json(result.menssage);
+    return res.status(result.status).json(result.message);
   }
 }
