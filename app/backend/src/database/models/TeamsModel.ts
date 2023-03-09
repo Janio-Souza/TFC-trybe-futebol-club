@@ -25,12 +25,4 @@ Teams.init({
   timestamps: false,
 });
 
-/**
-  * `Workaround` para aplicar as associations em TS:
-  * Associations 1:N devem ficar em uma das instâncias de modelo
-  * */
-
-// Exemp.hasMany(Teams);
-// Teams.belongsTo(Exemp);
-
 export default Teams;
