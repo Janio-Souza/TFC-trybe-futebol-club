@@ -3,9 +3,7 @@ import * as chai from 'chai';
 // @ts-ignore
 import chaiHttp = require('chai-http');
 
-// import Model from '../database/models/MatchesModel'
 import Matches from '../database/models/MatchesModel'
-import  MatchesServices from '../services/matches.service';
 import allMatches from './mocks/matches';
 import { app } from '../app'
 
