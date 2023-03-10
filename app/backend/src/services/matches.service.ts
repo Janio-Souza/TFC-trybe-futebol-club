@@ -21,10 +21,12 @@ class MatchesServices implements IMatches {
     return 'Finished';
   }
 
-  // async updateGame(id: number, req: Request): Promise<string> {
-  //   this.model.update({ inProgress: false }, { where: { id } });
-  //   return 'Finished';
-  // }
+  async updateGame(id: number, body:
+  { homeTeamGoals: number, awayTeamGoals: number }): Promise<string> {
+    const { homeTeamGoals, awayTeamGoals } = body;
+    await this.model.update({ homeTeamGoals, awayTeamGoals }, { where: { id } });
+    return 'updated';
+  }
 }
 
 export default MatchesServices;

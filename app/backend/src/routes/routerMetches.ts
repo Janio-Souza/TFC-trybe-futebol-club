@@ -9,7 +9,7 @@ const matcheController = new MatchesController(matcheService);
 matcheRoutes.get('/', (req: Request, res: Response) => matcheController.readAll(req, res));
 matcheRoutes.patch('/:id/finish', validationToken, (req: Request, res: Response) =>
   matcheController.endGame(req, res));
-// matcheRoutes.patch('/:id', validationToken, (req: Request, res: Response) =>
-// matcheController.updateGame(req, res));
+matcheRoutes.patch('/:id', validationToken, (req: Request, res: Response) =>
+  matcheController.updateGames(req, res));
 
 export default matcheRoutes;
