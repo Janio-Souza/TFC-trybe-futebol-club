@@ -27,4 +27,12 @@ export default class MatchesController {
 
     return res.status(200).json({ message: result });
   }
+
+  // async updateGame(req: Request, res: Response) {
+  //   const { id } = req.params;
+  //   const result = await this._IService.updateGame(Number(id, req));
+  //   console.log(result);
+
+  //   return res.status(200).json({ message: result });
+  // }
 }

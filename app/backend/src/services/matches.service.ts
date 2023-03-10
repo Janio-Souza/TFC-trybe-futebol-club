@@ -1,3 +1,4 @@
+// import { Request } from 'express';
 import { ModelStatic } from 'sequelize';
 import IMatches from '../interfaces/IMetches';
 import MatchesModel from '../database/models/MatchesModel';
@@ -19,6 +20,11 @@ class MatchesServices implements IMatches {
     this.model.update({ inProgress: false }, { where: { id } });
     return 'Finished';
   }
+
+  // async updateGame(id: number, req: Request): Promise<string> {
+  //   this.model.update({ inProgress: false }, { where: { id } });
+  //   return 'Finished';
+  // }
 }
 
 export default MatchesServices;
