@@ -14,6 +14,11 @@ class MatchesServices implements IMatches {
       ],
     });
   }
+
+  async updateProgress(id: number): Promise<string> {
+    this.model.update({ inProgress: false }, { where: { id } });
+    return 'Finished';
+  }
 }
 
 export default MatchesServices;

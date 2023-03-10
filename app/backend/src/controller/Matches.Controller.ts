@@ -18,4 +18,13 @@ export default class MatchesController {
     }
     return res.status(200).json(result);
   }
+
+  async endGame(req: Request, res: Response) {
+    const { id } = req.params;
+    console.log('log matches id', id);
+    const result = await this._IService.updateProgress(Number(id));
+    console.log(result);
+
+    return res.status(200).json({ message: result });
+  }
 }
