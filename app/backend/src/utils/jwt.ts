@@ -3,7 +3,7 @@ import 'dotenv/config';
 
 const secret = process.env.JWT_SECRET as string;
 
-const jwtTokenGenerate = (payload: any) => {
+const jwtTokenGenerate = (payload: object) => {
   const jwtConfig: SignOptions = {
     algorithm: 'HS256',
   };
