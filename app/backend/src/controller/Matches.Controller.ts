@@ -36,6 +36,6 @@ export default class MatchesController {
 
   async insertGames(req: Request, res: Response) {
     const result = await this._IService.insertGame(req.body);
-    return res.status(201).json(result);
+    return res.status(result.status).json(result.message);
   }
 }

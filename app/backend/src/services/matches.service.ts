@@ -30,12 +30,14 @@ class MatchesServices implements IMatches {
 
   async insertGame(body:
   {
-    homeTeamId: number,
-    awayTeamId: number,
-    homeTeamGoals: number,
-    awayTeamGoals: number,
-  }): Promise<object> {
+    homeTeamId: number, awayTeamId: number, homeTeamGoals: number, awayTeamGoals: number,
+  }): Promise<{ status: number, message: object }> {
     const { homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals } = body;
+
+    if (homeTeamId === awayTeamId) {
+      return { status: 422,
+        message: { message: 'It is not possible to create a match with two equal teams' } };
+    }
     const result = await this.model.create({
       homeTeamId,
       awayTeamId,
@@ -43,8 +45,7 @@ class MatchesServices implements IMatches {
       awayTeamGoals,
       inProgress: true,
     }, { fields: ['homeTeamId', 'awayTeamId', 'homeTeamGoals', 'awayTeamGoals', 'inProgress'] });
-    console.log(result.dataValues);
-    return result.dataValues;
+    return { status: 201, message: result.dataValues };
   }
 }
 
