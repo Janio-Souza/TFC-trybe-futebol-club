@@ -11,5 +11,7 @@ matcheRoutes.patch('/:id/finish', validationToken, (req: Request, res: Response)
   matcheController.endGame(req, res));
 matcheRoutes.patch('/:id', validationToken, (req: Request, res: Response) =>
   matcheController.updateGames(req, res));
+matcheRoutes.post('', validationToken, (req: Request, res: Response) =>
+  matcheController.insertGames(req, res));
 
 export default matcheRoutes;

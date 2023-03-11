@@ -33,4 +33,9 @@ export default class MatchesController {
     const result = await this._IService.updateGame(Number(id), req.body);
     return res.status(200).json({ message: result });
   }
+
+  async insertGames(req: Request, res: Response) {
+    const result = await this._IService.insertGame(req.body);
+    return res.status(201).json(result);
+  }
 }

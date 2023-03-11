@@ -27,6 +27,25 @@ class MatchesServices implements IMatches {
     await this.model.update({ homeTeamGoals, awayTeamGoals }, { where: { id } });
     return 'updated';
   }
+
+  async insertGame(body:
+  {
+    homeTeamId: number,
+    awayTeamId: number,
+    homeTeamGoals: number,
+    awayTeamGoals: number,
+  }): Promise<object> {
+    const { homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals } = body;
+    const result = await this.model.create({
+      homeTeamId,
+      awayTeamId,
+      homeTeamGoals,
+      awayTeamGoals,
+      inProgress: true,
+    }, { fields: ['homeTeamId', 'awayTeamId', 'homeTeamGoals', 'awayTeamGoals', 'inProgress'] });
+    console.log(result.dataValues);
+    return result.dataValues;
+  }
 }
 
 export default MatchesServices;
