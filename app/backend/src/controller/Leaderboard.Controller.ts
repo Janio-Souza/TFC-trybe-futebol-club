@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import ILeaderboard from '../interfaces/ILeaderboard';
-import selectHomeTimes from '../services/selectHomeTeams';
+import leaderboardTimes from '../services/leaderboardTimes';
 
 export default class LeaderboardController {
   private _IService: ILeaderboard;
@@ -11,10 +11,8 @@ export default class LeaderboardController {
 
   async readAll(_req: Request, res: Response) {
     const result = await this._IService.getAllTimes();
-    // const result = await this._IService.getById(1);
-    const leaderboard = await selectHomeTimes(result);
-    // return res.status(200).json(result.matches);
-    console.log(leaderboard);
-    return res.status(200).json(leaderboard);
+    const homeLeaderboard = await leaderboardTimes(result);
+    console.log(homeLeaderboard);
+    return res.status(200).json(homeLeaderboard);
   }
 }

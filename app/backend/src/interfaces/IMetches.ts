@@ -1,4 +1,3 @@
-// import { Request } from 'express';
 import MatchesModel from '../database/models/MatchesModel';
 
 export default interface IMatches {
