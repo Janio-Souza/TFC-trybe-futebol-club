@@ -4,6 +4,18 @@ import {
   efficiencyCalculations,
 } from './rules';
 
+interface teams {
+  dataValues: { id: number, teamName: string }
+}
+
+interface matches {
+  dataValues: {
+    homeTeamId: number,
+    homeTeamGoals:number,
+    awayTeamGoals: number,
+  }
+}
+
 let totalPoints = 0;
 let totalGames = 0;
 let totalVictories = 0;
@@ -26,11 +38,7 @@ const resetPoints = () => {
   efficiency = 0;
 };
 
-// eslint-disable-next-line max-lines-per-function
-const forMatches = (
-  matches: { dataValues: { homeTeamId: number, homeTeamGoals:number, awayTeamGoals: number } }[],
-  id: number,
-) => {
+const forMatches = (matches: matches[], id: number) => {
   matches
     .forEach((matche) => {
       const { homeTeamGoals, awayTeamGoals } = matche.dataValues;
@@ -58,28 +66,26 @@ const ordination = (arrayBoard: IboardTimes[]) => {
   return result;
 };
 
-// eslint-disable-next-line max-lines-per-function
 const leaderboardTimes = async (timesObj: any) => {
-  const leaderboard = timesObj.times
-    .map((teams: { dataValues: { id: number, teamName: string } }) => {
-      const { dataValues: { id, teamName } } = teams;
+  const leaderboard = timesObj.times.map((teams: teams) => {
+    const { dataValues: { id, teamName } } = teams;
 
-      resetPoints();
-      forMatches(timesObj.matches, id);
+    resetPoints();
+    forMatches(timesObj.matches, id);
 
-      return {
-        name: teamName,
-        totalPoints,
-        totalGames,
-        totalVictories,
-        totalDraws,
-        totalLosses,
-        goalsFavor,
-        goalsOwn,
-        goalsBalance,
-        efficiency,
-      };
-    });
+    return {
+      name: teamName,
+      totalPoints,
+      totalGames,
+      totalVictories,
+      totalDraws,
+      totalLosses,
+      goalsFavor,
+      goalsOwn,
+      goalsBalance,
+      efficiency,
+    };
+  });
 
   return ordination(leaderboard);
 };
