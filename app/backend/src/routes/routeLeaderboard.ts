@@ -6,6 +6,8 @@ const leaderboardRoutes = Router();
 const leaderboardService = new LeaderboardServices();
 const leaderboardController = new LeaderboardController(leaderboardService);
 leaderboardRoutes.get('/home', (req: Request, res: Response) =>
-  leaderboardController.readAll(req, res));
+  leaderboardController.readAllHome(req, res));
+leaderboardRoutes.get('/away', (req: Request, res: Response) =>
+  leaderboardController.readAllAway(req, res));
 
 export default leaderboardRoutes;

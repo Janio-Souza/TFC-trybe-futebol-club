@@ -4,7 +4,7 @@ import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 
 import Matches from '../database/models/MatchesModel'
-import allMatches from './mocks/matches';
+import matches from './mocks/matches';
 import { app } from '../app'
 
 chai.use(chaiHttp);
@@ -18,12 +18,12 @@ describe('Testando rota /matches', () => {
   })
 
   it('Retorna 200, com a lista de times', async () => {
-    sinon.stub( Matches, 'findAll').resolves(allMatches as unknown as Matches[]);
+    sinon.stub( Matches, 'findAll').resolves(matches as unknown as Matches[]);
 
     const  chaiHttpResponse = await chai
         .request(app).get('/matches');
     
     expect(chaiHttpResponse.status).to.be.equal(200);
-    expect(chaiHttpResponse.body).to.be.deep.equal(allMatches);
+    expect(chaiHttpResponse.body).to.be.deep.equal(matches);
   });
 });

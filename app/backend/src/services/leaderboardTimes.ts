@@ -11,6 +11,7 @@ interface teams {
 interface matches {
   dataValues: {
     homeTeamId: number,
+    awayTeamId: number,
     homeTeamGoals:number,
     awayTeamGoals: number,
   }
@@ -38,7 +39,7 @@ const resetPoints = () => {
   efficiency = 0;
 };
 
-const forMatches = (matches: matches[], id: number) => {
+const homeForMatches = (matches: matches[], id: number) => {
   matches
     .forEach((matche) => {
       const { homeTeamGoals, awayTeamGoals } = matche.dataValues;
@@ -58,6 +59,26 @@ const forMatches = (matches: matches[], id: number) => {
     });
 };
 
+const awayForMatches = (matches: matches[], id: number) => {
+  matches
+    .forEach((matche) => {
+      const { homeTeamGoals, awayTeamGoals } = matche.dataValues;
+
+      if (matche.dataValues.awayTeamId === id) {
+        const matchResults = teamsTotalPoints(awayTeamGoals, homeTeamGoals);
+        totalPoints += matchResults.points;
+        totalVictories += matchResults.victoria;
+        totalGames += 1;
+        totalDraws += matchResults.draw;
+        totalLosses += matchResults.loss;
+        goalsFavor += awayTeamGoals;
+        goalsOwn += homeTeamGoals;
+        goalsBalance = goalsFavor - goalsOwn;
+        efficiency = efficiencyCalculations(totalPoints, totalGames);
+      }
+    });
+};
+
 const ordination = (arrayBoard: IboardTimes[]) => {
   const result = arrayBoard.sort((a, b) => b.goalsFavor - a.goalsFavor) // Organiza por gols a favor
     .sort((a, b) => b.goalsBalance - a.goalsBalance) // Organiza por golsBalance "saldo de gols"
@@ -66,12 +87,12 @@ const ordination = (arrayBoard: IboardTimes[]) => {
   return result;
 };
 
-const leaderboardTimes = async (timesObj: any) => {
+const homeLeaderboardTimes = async (timesObj: any) => {
   const leaderboard = timesObj.times.map((teams: teams) => {
     const { dataValues: { id, teamName } } = teams;
 
     resetPoints();
-    forMatches(timesObj.matches, id);
+    homeForMatches(timesObj.matches, id);
 
     return {
       name: teamName,
@@ -90,4 +111,28 @@ const leaderboardTimes = async (timesObj: any) => {
   return ordination(leaderboard);
 };
 
-export default leaderboardTimes;
+const awayLeaderboardTimes = async (timesObj: any) => {
+  const leaderboard = timesObj.times.map((teams: teams) => {
+    const { dataValues: { id, teamName } } = teams;
+
+    resetPoints();
+    awayForMatches(timesObj.matches, id);
+
+    return {
+      name: teamName,
+      totalPoints,
+      totalGames,
+      totalVictories,
+      totalDraws,
+      totalLosses,
+      goalsFavor,
+      goalsOwn,
+      goalsBalance,
+      efficiency,
+    };
+  });
+
+  return ordination(leaderboard);
+};
+
+export { homeLeaderboardTimes, awayLeaderboardTimes };

@@ -1,4 +1,4 @@
-const allMatches = [
+const matches = [
   {
     "id": 1,
     "homeTeamId": 16,
@@ -673,4 +673,4 @@ const allMatches = [
   }
 ];
 
-export default allMatches;
+export default matches;
