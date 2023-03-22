@@ -1,5 +1,5 @@
 const matches = [
-  {
+  { dataValues: {
     "id": 1,
     "homeTeamId": 16,
     "homeTeamGoals": 1,
@@ -12,8 +12,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Grêmio"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 2,
     "homeTeamId": 9,
     "homeTeamGoals": 1,
@@ -26,8 +26,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Santos"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 3,
     "homeTeamId": 4,
     "homeTeamGoals": 3,
@@ -40,8 +40,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Napoli-SC"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 4,
     "homeTeamId": 3,
     "homeTeamGoals": 0,
@@ -54,8 +54,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Bahia"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 5,
     "homeTeamId": 7,
     "homeTeamGoals": 1,
@@ -68,8 +68,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Minas Brasília"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 6,
     "homeTeamId": 5,
     "homeTeamGoals": 1,
@@ -82,8 +82,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Real Brasília"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 7,
     "homeTeamId": 12,
     "homeTeamGoals": 2,
@@ -96,8 +96,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Ferroviária"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 8,
     "homeTeamId": 15,
     "homeTeamGoals": 0,
@@ -110,8 +110,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Avaí/Kindermann"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 9,
     "homeTeamId": 1,
     "homeTeamGoals": 0,
@@ -124,8 +124,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Palmeiras"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 10,
     "homeTeamId": 2,
     "homeTeamGoals": 0,
@@ -138,8 +138,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Internacional"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 11,
     "homeTeamId": 13,
     "homeTeamGoals": 1,
@@ -152,8 +152,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Botafogo"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 12,
     "homeTeamId": 6,
     "homeTeamGoals": 0,
@@ -166,8 +166,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Corinthians"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 13,
     "homeTeamId": 8,
     "homeTeamGoals": 2,
@@ -180,8 +180,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Cruzeiro"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 14,
     "homeTeamId": 14,
     "homeTeamGoals": 2,
@@ -194,8 +194,8 @@ const matches = [
     "awayTeam": {
       "teamName": "São Paulo"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 15,
     "homeTeamId": 10,
     "homeTeamGoals": 0,
@@ -208,8 +208,8 @@ const matches = [
     "awayTeam": {
       "teamName": "São José-SP"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 16,
     "homeTeamId": 11,
     "homeTeamGoals": 0,
@@ -222,8 +222,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Flamengo"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 17,
     "homeTeamId": 1,
     "homeTeamGoals": 2,
@@ -236,8 +236,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Grêmio"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 18,
     "homeTeamId": 12,
     "homeTeamGoals": 4,
@@ -250,8 +250,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Cruzeiro"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 19,
     "homeTeamId": 11,
     "homeTeamGoals": 2,
@@ -264,8 +264,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Bahia"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 20,
     "homeTeamId": 7,
     "homeTeamGoals": 0,
@@ -278,8 +278,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Internacional"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 21,
     "homeTeamId": 6,
     "homeTeamGoals": 3,
@@ -292,8 +292,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Real Brasília"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 22,
     "homeTeamId": 4,
     "homeTeamGoals": 3,
@@ -306,8 +306,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Botafogo"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 23,
     "homeTeamId": 15,
     "homeTeamGoals": 2,
@@ -320,8 +320,8 @@ const matches = [
     "awayTeam": {
       "teamName": "São Paulo"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 24,
     "homeTeamId": 10,
     "homeTeamGoals": 2,
@@ -334,8 +334,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Santos"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 25,
     "homeTeamId": 2,
     "homeTeamGoals": 0,
@@ -348,8 +348,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Ferroviária"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 26,
     "homeTeamId": 13,
     "homeTeamGoals": 1,
@@ -362,8 +362,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Avaí/Kindermann"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 27,
     "homeTeamId": 5,
     "homeTeamGoals": 1,
@@ -376,8 +376,8 @@ const matches = [
     "awayTeam": {
       "teamName": "São José-SP"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 28,
     "homeTeamId": 16,
     "homeTeamGoals": 3,
@@ -390,8 +390,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Flamengo"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 29,
     "homeTeamId": 9,
     "homeTeamGoals": 0,
@@ -404,8 +404,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Corinthians"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 30,
     "homeTeamId": 3,
     "homeTeamGoals": 0,
@@ -418,8 +418,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Palmeiras"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 31,
     "homeTeamId": 8,
     "homeTeamGoals": 2,
@@ -432,8 +432,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Minas Brasília"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 32,
     "homeTeamId": 14,
     "homeTeamGoals": 5,
@@ -446,8 +446,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Napoli-SC"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 33,
     "homeTeamId": 1,
     "homeTeamGoals": 1,
@@ -460,8 +460,8 @@ const matches = [
     "awayTeam": {
       "teamName": "São Paulo"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 34,
     "homeTeamId": 9,
     "homeTeamGoals": 3,
@@ -474,8 +474,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Ferroviária"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 35,
     "homeTeamId": 10,
     "homeTeamGoals": 1,
@@ -488,8 +488,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Cruzeiro"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 36,
     "homeTeamId": 2,
     "homeTeamGoals": 0,
@@ -502,8 +502,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Flamengo"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 37,
     "homeTeamId": 15,
     "homeTeamGoals": 0,
@@ -516,8 +516,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Real Brasília"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 38,
     "homeTeamId": 14,
     "homeTeamGoals": 2,
@@ -530,8 +530,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Corinthians"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 39,
     "homeTeamId": 3,
     "homeTeamGoals": 2,
@@ -544,8 +544,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Napoli-SC"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 40,
     "homeTeamId": 12,
     "homeTeamGoals": 4,
@@ -558,8 +558,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Grêmio"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 41,
     "homeTeamId": 16,
     "homeTeamGoals": 2,
@@ -572,8 +572,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Internacional"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 42,
     "homeTeamId": 6,
     "homeTeamGoals": 1,
@@ -586,8 +586,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Avaí/Kindermann"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 43,
     "homeTeamId": 11,
     "homeTeamGoals": 0,
@@ -600,8 +600,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Minas Brasília"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 44,
     "homeTeamId": 7,
     "homeTeamGoals": 2,
@@ -614,8 +614,8 @@ const matches = [
     "awayTeam": {
       "teamName": "São José-SP"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 45,
     "homeTeamId": 5,
     "homeTeamGoals": 1,
@@ -628,8 +628,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Botafogo"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 46,
     "homeTeamId": 4,
     "homeTeamGoals": 1,
@@ -642,8 +642,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Palmeiras"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 47,
     "homeTeamId": 8,
     "homeTeamGoals": 1,
@@ -656,8 +656,8 @@ const matches = [
     "awayTeam": {
       "teamName": "Santos"
     }
-  },
-  {
+  }},
+  { dataValues: {
     "id": 48,
     "homeTeamId": 13,
     "homeTeamGoals": 1,
@@ -670,7 +670,7 @@ const matches = [
     "awayTeam": {
       "teamName": "Bahia"
     }
-  }
+  }}
 ];
 
 export default matches;

@@ -1,4 +1,6 @@
 import * as express from 'express';
+import 'express-async-errors';
+import error from './middleware/error';
 import teamsRoutes from './routes/routeTeams';
 import userRoutes from './routes/routeUsers';
 import matcheRoutes from './routes/routerMetches';
@@ -15,6 +17,7 @@ class App {
 
     // Não remover essa rota
     this.app.get('/', (req, res) => res.json({ ok: true }));
+    this.app.use(error);
   }
 
   private config():void {
