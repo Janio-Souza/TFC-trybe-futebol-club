@@ -1,4 +1,4 @@
-const landerboardMock = [
+const homeLanderboardMock = [
   {
     totalPoints: 9,
     totalGames: 3,
@@ -177,4 +177,4 @@ const landerboardMock = [
   }
 ];
 
-export default landerboardMock;
+export default homeLanderboardMock;

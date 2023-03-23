@@ -4,32 +4,31 @@ import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 
 import Matches from '../database/models/MatchesModel'
-import landerboardMock from './mocks/landerboards';
-// import { homeLeaderboardTimes } from '../services/leaderboardTimes';
+import awayLanderboardMock from './mocks/awayLanderboards';
 import matches from './mocks/matches';
 import Teams from '../database/models/TeamsModel'
 import times from './mocks/teamsMock'
 import { app } from '../app'
-// import { Model } from 'sequelize';
 
 chai.use(chaiHttp);
 
 const { expect } = chai;
 
-describe('Testando rota /landerboard', () => {
+describe('Testando rota /landerboard/away', () => {
 
   afterEach(() => {
     sinon.restore();
   })
 
-  it('Retorna 200, com os placares dos times de casa', async () => {
+  it('Retorna 200, com os placares dos times de de fora', async () => {
     sinon.stub(Teams, 'findAll').resolves(times as unknown as Teams[]);
     sinon.stub( Matches, 'findAll').resolves(matches as unknown as Matches[]);
 
     const  chaiHttpResponse = await chai
-        .request(app).get('/leaderboard/home');
+        .request(app).get('/leaderboard/away');
+    
     
     expect(chaiHttpResponse.status).to.be.equal(200);
-    expect(chaiHttpResponse.body).to.be.deep.equal(landerboardMock);
+    expect(chaiHttpResponse.body).to.be.deep.equal(awayLanderboardMock);
   });
 });
