@@ -8,21 +8,13 @@ Aplicação desenvolvida para apresentar informações sobre partidas e classifi
 ## Tecnologias e Ferramentas empregadas
 
 Node.js;
-
 TypeScript;
-
 Express;
-
 Sequelize;
-
 Chai;
-
 React.js;
-
 Context API;
-
 Mysql; e
-
 Docker.
 
 ## Status do Projeto
