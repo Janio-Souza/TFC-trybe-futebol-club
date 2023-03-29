@@ -6,7 +6,9 @@ Aplicação desenvolvida para apresentar informações sobre partidas e classifi
 ![trybe-futebol-clube-1](./app/frontend/TFC.gif)
 
 ## Tecnologias e Ferramentas empregadas
+
 Node.js;
+
 TypeScript;
 Express;
 Sequelize;
