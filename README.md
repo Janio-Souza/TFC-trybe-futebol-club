@@ -4,7 +4,6 @@
 Aplicação desenvolvida para apresentar informações sobre partidas e classificações em campeonatos de futebol.
 
 ![trybe-futebol-clube-1](./app/frontend/TFC.gif)
-![trybe-futebol-clube-2](./app/trybe-futebol-clube-2.png)
 
 ## Tecnologias e Ferramentas empregadas
 Node.js;
