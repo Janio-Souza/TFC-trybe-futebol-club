@@ -46,4 +46,4 @@ D. Acessar atravésdo navegador:
 |Janio Souza|https://github.com/Janio-Souza|
 
 ## Contato
-[GitHub: Repositório-trybe-futebol-clube](https://github.com/Janio-Souza)
+[GitHub: Janio Souza](https://github.com/Janio-Souza)
