@@ -23,6 +23,7 @@ Aplicação em funcionamento.
 ### Instalação e Execução
 
 Clone o repositório em sua maquina e siga os passos.
+
 A. Entrar no diretório app:
 
   $ cd app
