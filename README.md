@@ -22,7 +22,7 @@ Aplicação em funcionamento.
 
 ## Pastas desenvolvidas por mim, com seus respectivos arquivos
 
-./app/backend/src/.., 
+./app/backend/src, 
 ./controller,
 ./errors,
 ./interfaces,
@@ -31,6 +31,11 @@ Aplicação em funcionamento.
 ./services,
 ./tests,
 ./utils;
+
+## Pastas desenvolvidas pela trybe, entregue com seus respectivos arquivos
+
+./app/frontend/;
+
 
 
 ## Acesso à Aplicação
