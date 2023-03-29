@@ -20,6 +20,19 @@ Docker.
 ## Status do Projeto
 Aplicação em funcionamento.
 
+## Pastas desenvolvidas por mim, com seus respectivos arquivos
+
+./app/backend/src/...
+../controller;
+../errors;
+../interfaces;
+../middleware;
+../routes;
+../services;
+../tests;
+../utils;
+
+
 ## Acesso à Aplicação
 ### Instalação e Execução
 
